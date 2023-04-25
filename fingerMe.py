@@ -5,8 +5,7 @@ class PC_info:
         self.data = {}
 
     def get_public_ip(self):
-        self.external_ip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
-        self.data['ip']=self.external_ip
+        self.data['ip']=urllib.request.urlopen('https://ident.me').read().decode('utf8')
 
     def getMAC(self):
         out = subprocess.Popen("ipconfig /all", shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
